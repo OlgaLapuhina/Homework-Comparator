@@ -17,12 +17,12 @@ public class Main {
         System.out.println(people);
     }
 
-    static Comparator<Person> personComparator = (Person a, Person b) -> {
-        int surNameFirstPerson = a.getSurname().split(" ").length;
-        int surNameSecondPerson = b.getSurname().split(" ").length;
+    static Comparator<Person> personComparator = (p1, p2) -> {
+        int surNameFirstPerson = p1.getSurname().split(" ").length;
+        int surNameSecondPerson = p2.getSurname().split(" ").length;
 
         if (surNameFirstPerson == surNameSecondPerson) {
-            return Integer.compare(a.getAge(), b.getAge());
+            return Integer.compare(p1.getAge(), p2.getAge());
         }
         return surNameFirstPerson > surNameSecondPerson ? 1 : -1;
     };
